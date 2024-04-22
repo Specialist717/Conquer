@@ -1,8 +1,10 @@
 package view;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.dnd.*;
+import java.io.File;
 import java.awt.datatransfer.*;
 import model.Card;
 
@@ -25,28 +27,26 @@ public class CardPanel extends JPanel {
                 }
             }
         });
-        ImageIcon imageIcon = new ImageIcon("src\\pictures\\karta.png");
-        backgroundImage = imageIcon.getImage();
     }
 
     public void setCard(Card card) {
         this.card = card;
-        Font newFont = new Font("Arial", Font.BOLD, 25);
-        cardLabel.setFont(newFont);
-        // cardLabel.setVerticalAlignment(JLabel.CENTER);
+        int x = card.getValue();
         cardLabel.setHorizontalAlignment(JLabel.CENTER);
-
-        if (card != null) {
-            cardLabel.setText(card.toString());
+        try {
             if (card.getIsEnemy()) {
-                this.setBackground(Color.RED);
+                ImageIcon imageIcon = new ImageIcon("Projekt/src/pictures/Enemy-" + String.valueOf(x) + ".png");
+                backgroundImage = imageIcon.getImage();
             } else {
-                this.setBackground(Color.GREEN);
+                ImageIcon imageIcon = new ImageIcon("Projekt/src/pictures/My-" + String.valueOf(x) + ".png");
+                backgroundImage = imageIcon.getImage();
             }
-        } else {
-            cardLabel.setText("");
-            this.setBackground(null); 
+        } catch(Exception e) {
+            e.printStackTrace();
         }
+        // Scale the image to fit the panel
+
+        repaint();
     }
 
     public Card getCard() {
@@ -82,6 +82,6 @@ public class CardPanel extends JPanel {
         super.paintComponent(g);
 
         // Draw the background image
-        g.drawImage(backgroundImage, 0, 0, this.getWidth(), this.getHeight(), this);
+        g.drawImage(backgroundImage, 0, 1, this.getWidth(), this.getHeight(), this);
     }
 }

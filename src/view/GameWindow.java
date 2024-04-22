@@ -2,6 +2,7 @@ package view;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+// import org.w3c.dom.css.RGBColor;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +38,7 @@ public class GameWindow extends JFrame {
         }
 
         try {
-            BufferedImage originalImage = ImageIO.read(new File("src\\pictures\\Icon.png"));
+            BufferedImage originalImage = ImageIO.read(new File("Projekt\\src\\pictures\\Icon.png"));
             Image scaledImage = originalImage.getScaledInstance(70, 70, Image.SCALE_SMOOTH);
             this.setIconImage(scaledImage);
         } catch (IOException e) {
@@ -47,7 +48,6 @@ public class GameWindow extends JFrame {
         this.setLayout(new BorderLayout());
         JPanel boardLayout = new JPanel(new FlowLayout());
         this.cards = new JPanel(new FlowLayout());
-        JPanel empty = new JPanel(new FlowLayout());
         this.add(boardLayout, BorderLayout.CENTER);
         this.add(cards, BorderLayout.SOUTH);
 
@@ -55,11 +55,9 @@ public class GameWindow extends JFrame {
         turnLabel.setHorizontalAlignment(JLabel.CENTER);
         this.add(turnLabel, BorderLayout.NORTH);
 
-
         boardPanel = new BoardPanel();
         boardPanel.setPreferredSize(new Dimension(500, 500));
         boardLayout.add(boardPanel, BorderLayout.CENTER);
-        boardLayout.add(empty);
 
         this.card1 = this.deck.drawCard();
         cardPanel1.setCard(card1);
@@ -78,7 +76,11 @@ public class GameWindow extends JFrame {
         cardPanel3.setPreferredSize(new Dimension(100, 100));
         cardPanel3.setBackground(Color.GREEN); 
         cards.add(cardPanel3, BorderLayout.EAST);
-
+        
+        this.setBackground(Color.DARK_GRAY);
+        boardLayout.setBackground(new Color(52,61,70));
+        cards.setBackground(Color.LIGHT_GRAY);
+        boardPanel.setBackground(Color.WHITE);
         this.setVisible(true);
     }
 

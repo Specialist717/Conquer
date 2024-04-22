@@ -25,10 +25,6 @@ public class BoardPanel extends JPanel {
                     this.add(grid[i][j]);
                 }
             }
-
-        // Load the background image
-        ImageIcon imageIcon = new ImageIcon("src\\pictures\\tło1.png");
-        this.backgroundImage = imageIcon.getImage();
             
             new DropTarget(this, new DropTargetAdapter() {
                 public void drop(DropTargetDropEvent event) {
