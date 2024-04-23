@@ -4,9 +4,9 @@ Conquer is a strategic card game where players compete to control the board by p
 https://github.com/Specialist717/Conquer/assets/117452469/922dbd9d-79c0-4a87-8c26-1f2756de440e
 
 <p align="center">
-  <img alt="Starting message" src="./showcase/starting message.png" width="45%">
+  <img alt="Starting message" src="./showcase/starting message.png" width="40%">
 &nbsp; &nbsp; &nbsp; &nbsp;
-  <img alt="End message" src="./showcase/ending message.png" width=45%>
+  <img alt="End message" src="./showcase/ending message.png" width=40%>
 </p>
 
 ## Technologies Used
@@ -45,5 +45,12 @@ Remember to ensure that the machines are connected to the same network and the s
 1. Place cards on the board from your hand of 18 cards, ranging from power 1-18.
 2. Cards can be played on empty spaces or over lower-powered enemy cards.
 3. Secure victory with a path of 5 cards in a row horizontally, vertically, or diagonally.
-   
+
+## Plans for the future
+-Make the application easier to navigate.
+
+-Add startup screen with falling numbers as background.
+ 
+https://github.com/Specialist717/Conquer/assets/117452469/6ca0e395-3a24-499a-8dad-18e49d30f3bf
+  
 #### Enjoy! 
